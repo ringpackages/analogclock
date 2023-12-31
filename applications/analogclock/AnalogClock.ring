@@ -4,7 +4,7 @@
 ### 2017-03-28  Bert Mariani
 ###-----------------------------------------
 
-Load "guilib.ring"
+Load "lightguilib.ring"
 
 colorRed     = new qcolor() { setrgb( 255,0,0,255 ) }
 penRed       = new qpen()   { setcolor(colorRed)  setwidth(2) }
@@ -130,7 +130,7 @@ New qapp
             myfilter.setResizeEvent("WindowSizeChanged()")
             installeventfilter(myfilter)
 
-            
+       DrawCounter()     
        show()
     }
 
@@ -258,12 +258,12 @@ Func WindowSizeChanged()
                     
     analogClock()
 
-    imageClock.setGeometry(0,0,WinWidth-16, WinHeight-38)    
+    imageClock.setGeometry(0,0,WinWidth, WinHeight-38)    
 
 return
 
 
 func analogClock
-        oScaledImage = image.scaled(WinWidth-16 , WinHeight-38 ,0,0)
-        imageClock.setpixmap(oScaledImage)   ### Size-H, Siz-V, Aspect, Transform
+        oScaledImage = image.scaled(WinWidth , WinHeight-38 ,0,0)
+        imageClock.setpixmap(oScaledImage)   ### Size-H, Size-V, Aspect, Transform
 return
